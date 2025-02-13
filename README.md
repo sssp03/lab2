@@ -175,7 +175,11 @@ axs[2].set_ylabel("Correlación")
 - `Se usa range(-len(n) + 1, len(n)) ` para definir el eje de desplazamientos de la correlación.
 - `Se grafica corr-`, que contiene los valores de la correlación entre x1_n y x2_n.
   
-Para el último punto de la guía, se requería descargar una señal de EEG desde **PhysioNet**. El archivo de encabezado en texto plano **"0284_001_004_EEG.hea"** proporciona información clave sobre esta señal, incluyendo su contenido, la hora de inicio y finalización, así como la frecuencia de la red eléctrica (también conocida como frecuencia de la línea o red eléctrica). A partir de esta señal, se debían realizar los siguientes análisis:
+Para el último punto de la guía, se debía descargar una señal de EEG desde PhysioNet. Esta señal corresponde al primer segmento de los datos de EEG del paciente 0284 de la cohorte de pacientes de I-CARE. El registro comienza 4 horas, 7 minutos y 23 segundos después del paro cardíaco y finaliza 4 horas, 59 minutos y 59 segundos después del evento.  
+
+El archivo de encabezado en texto plano 0284_001_004_EEG.hea proporciona detalles sobre el contenido de la señal, incluyendo la hora de inicio, la hora de finalización y la frecuencia de la red eléctrica (también conocida como frecuencia de línea o de la red eléctrica).  
+
+A partir de esta señal, se debían realizar los siguientes análisis:
 
 `i.` Caracterice la señal en función del tiempo, esto es, calcule sus estadísticos descriptivos, frecuencia de muestreo, etc.
 
