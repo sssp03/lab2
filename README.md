@@ -337,8 +337,11 @@ std_freq = np.std(frequencies[:fs//2])
 ```
 
 •	frequencies[:fs//2]: frequencies contiene las frecuencias obtenidas con la Transformada de Fourier (FFT). fs//2 significa tomar solo la mitad positiva del espectro, ya que la FFT genera valores simétricos en torno a cero. La frecuencia máxima en la FFT es la frecuencia de Nyquist (fs/2f_s/2).
+
 •	np.mean(frequencies[:fs//2]) :Calcula la frecuencia media, que representa el promedio de las frecuencias en la señal.
+
 •	np.median(frequencies[:fs//2]) :Calcula la frecuencia mediana, el valor que divide en dos partes iguales el conjunto de frecuencias.
+
 •	np.std(frequencies[:fs//2]):Calcula la desviación estándar, que indica cuánta variación hay en las frecuencias respecto a la media.
 
 Luego de haber realizados los respectivos cálculos, se graficó el histograma
@@ -354,16 +357,27 @@ plt.show()
 
 Donde:
 •	plt.figure(figsize=(8, 4)):Crea una nueva figura con tamaño de 8x4 pulgadas.
+
 •	plt.hist(frequencies[:fs//2], bins=30, alpha=0.75, color='b', edgecolor='black')
+
 •	plt.hist() : Crea un histograma, que es una gráfica de barras que muestra la distribución de valores.
+
 •	frequencies[:fs//2]: Usa solo la parte positiva del espectro.
+
 •	bins=30: Divide el rango de frecuencias en 30 intervalos.
+
 •	alpha=0.75: Ajusta la transparencia de las barras.
+
 •	color='b': Usa color azul para las barras.
+
 •	edgecolor='black': Contorno negro para las barras.
+
 •	plt.title("Histograma de Frecuencias") : Título del gráfico
-•	plt.xlabel("Frecuencia [Hz]"): Titulo del eje X       
+
+•	plt.xlabel("Frecuencia [Hz]"): Titulo del eje X   
+
 •	plt.ylabel("Muestras"): Titulo del eje Y
+
 •	plt.show() Muestra el gráfico
 
 Se imprime la información:
@@ -375,7 +389,9 @@ print(f"Desviación estándar: {std_freq:.2f} Hz")
 ```
 
 •	print(f"Frecuencia media: {mean_freq:.2f} Hz"): Muestra la frecuencia media con 2 decimales.
+
 •	print(f"Frecuencia mediana: {median_freq:.2f} Hz"): Muestra la frecuencia mediana con 2 decimales.
+
 •	print(f"Desviación estándar: {std_freq:.2f} Hz"): Muestra la desviación estándar, indicando qué tan dispersas están las frecuencias alrededor de la media.
 
 
