@@ -211,11 +211,27 @@ plt.show()
 ```
 Donde `plt.hist(signal, bins=30)`: Crea un histograma con 30 intervalos (bins).
 
+Para realizar el iii se realizo el siguiente procedimiento:
+```Python
+fft_values = np.fft.fft(signal)
+frequencies = np.fft.fftfreq(len(signal), 1/fs)
+```
+-`np.fft.fft(signal)`:Calcula la Transformada de Fourier de la señal, convirtiéndola del dominio del tiempo al dominio de la frecuencia, devuelve un array complejo donde la magnitud indica la intensidad de cada frecuencia y el ángulo indica la fase.
+-`np.fft.fftfreq(len(signal), 1/fs)`:Calcula las frecuencias correspondientes a cada componente en la FFT.fs es la frecuencia de muestreo, por lo que 1/fs es el período de muestreo.
 
-
-
-
-
+Para graficar el espectro de frecuencia se realizo el sguiente codigo:
+```Python
+axs[0].plot(frequencies[:fs//2], np.abs(fft_values[:fs//2]))
+axs[0].set_title("Espectro de frecuencia (FFT)")
+axs[0].set_xlabel("Frecuencia [Hz]")
+axs[0].set_ylabel("Magnitud")
+```
+-`np.abs(fft_values[:fs//2])`:Obtiene la magnitud de la Transformada de Fourier, se usa [:fs//2] para mostrar solo la mitad positiva del espectro, ya que la FFT genera valores simétricos alrededor de 0.
+Cálculo de la Densidad Espectral de Potencia (PSD):
+```Python
+psd = np.abs(fft_values) ** 2
+```
+Eleva al cuadrado la magnitud de la FFT para obtener la potencia de cada componente de frecuencia,cuanto mayor sea este valor, más energía tiene la señal en esa frecuencia.
 
 
 
