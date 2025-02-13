@@ -92,6 +92,7 @@ plt.tight_layout()
 plt.show()
 ```
 •	plt.tight_layout(): Ajusta los subgráficos para que no se superpongan.
+
 •	plt.show(): Muestra la figura en pantalla.
 
 Se imprimen los valores
