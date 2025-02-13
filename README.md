@@ -92,8 +92,7 @@ axs[2].set_ylabel("Correlación")
 - `Se usa range(-len(n) + 1, len(n)) ` para definir el eje de desplazamientos de la correlación.
 - `Se grafica corr-`, que contiene los valores de la correlación entre x1_n y x2_n.
   
-
-Para el ultimo punto de la guía se debía descargar una señal de physionet de EEG y realizar los siguientes puntos:
+Para el último punto de la guía, se requería descargar una señal de EEG desde **PhysioNet**. El archivo de encabezado en texto plano **"0284_001_004_EEG.hea"** proporciona información clave sobre esta señal, incluyendo su contenido, la hora de inicio y finalización, así como la frecuencia de la red eléctrica (también conocida como frecuencia de la línea o red eléctrica). A partir de esta señal, se debían realizar los siguientes análisis:
 
 `i.` Caracterice la señal en función del tiempo, esto es, calcule sus estadísticos descriptivos, frecuencia de muestreo, etc.
 
@@ -233,8 +232,9 @@ psd = np.abs(fft_values) ** 2
 ```
 Eleva al cuadrado la magnitud de la FFT para obtener la potencia de cada componente de frecuencia,cuanto mayor sea este valor, más energía tiene la señal en esa frecuencia.
 
+![image](https://github.com/user-attachments/assets/5adf5835-46b3-4b35-ae5c-3f79ac9079c4)
 
-
+Donde se puede observar que entre 50hz y 120 hz tiene mas picos es porque en esa parte hay mayor energia.
 
 
 
