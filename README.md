@@ -69,8 +69,11 @@ plt.grid()
 ```
 
 •	plt.subplot(2,1,1): Se divide la figura en 2 filas y 1 columna, seleccionando la primera fila.
+
 •	plt.stem(y1_n): Se dibuja la señal y1_n en forma de gráfico de puntos y líneas verticales (gráfico de señales discretas).
+
 •	plt.grid():  en Matplotlib se usa para agregar una cuadrícula a un gráfico, lo que facilita la visualización de los datos.
+
 •	plt.xlabel: Utiliza para poner títulos en la gráficas dependiendo el eje
 
 # Gráfica para y2(n)
