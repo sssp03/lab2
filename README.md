@@ -1,1 +1,1 @@
-# lab2
+# Convolución, correlación y transformación
