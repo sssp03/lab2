@@ -174,6 +174,8 @@ axs[2].set_ylabel("Correlación")
 - ` stem(range(-len(n) + 1, len(n)), corr, basefmt `=" "):
 - `Se usa range(-len(n) + 1, len(n)) ` para definir el eje de desplazamientos de la correlación.
 - `Se grafica corr-`, que contiene los valores de la correlación entre x1_n y x2_n.
+
+
   
 Para el último punto de la guía, se debía descargar una señal de EEG desde PhysioNet. Esta señal corresponde al primer segmento de los datos de EEG del paciente 0284 de la cohorte de pacientes de I-CARE. El registro comienza 4 horas, 7 minutos y 23 segundos después del paro cardíaco y finaliza 4 horas, 59 minutos y 59 segundos después del evento.  
 
@@ -296,6 +298,8 @@ plt.grid()
 plt.show()
 ```
 Donde `plt.hist(signal, bins=30)`: Crea un histograma con 30 intervalos (bins).
+![image](https://github.com/user-attachments/assets/861a73f0-391f-421c-bc0f-7b03257e24d5)
+
 
 Para realizar el iii se realizo el siguiente procedimiento:
 ```Python
