@@ -301,6 +301,7 @@ plt.show()
 Donde `plt.hist(signal, bins=30)`: Crea un histograma con 30 intervalos (bins).
 ![image](https://github.com/user-attachments/assets/861a73f0-391f-421c-bc0f-7b03257e24d5)
 
+En el punto ii, se puede afirmar que una señal de EEG es originalmente continua en el tiempo, ya que es una señal biológica análoga que varía de manera suave y sin interrupciones. Sin embargo, al ser registrada digitalmente en un sistema de adquisición de datos, se convierte en una señal discreta, debido a que es muestreada a intervalos regulares de tiempo. Esto ocurre porque los dispositivos de EEG capturan la señal a una frecuencia de muestreo específica, que puede ser de 250 Hz, 500 Hz o incluso 1000 Hz. Como resultado, en lugar de tener un valor en cada instante de tiempo, solo se registran valores en momentos determinados.
 
 Para realizar el iii se realizo el siguiente procedimiento:
 ```Python
