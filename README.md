@@ -20,6 +20,88 @@ Estos cálculos fueron posible realizarse gracias a la explicación de la docent
 ![image](https://github.com/user-attachments/assets/74e5d430-629c-490d-bfb2-5c095d896caf)
 ![image](https://github.com/user-attachments/assets/f335a4e5-34ad-4e0d-b391-3446d14ed2a1)
 
+
+Luego de haber realizado esos puntos a manos, procedimos a calcular y1(n) ,   y2(n), junto con sus gráficas respectivas usando Python. 
+El primer paso fue instalar las siguientes librerías
+
+```Python
+import numpy as np
+import matplotlib.pyplot as plt
+```
+•	numpy : Para trabajar con arreglos numéricos 
+•	 matplotlib.pyplot : Para generar gráficos.
+
+Después, se establecieron los valores cómo se había hecho anteriormente con los datos de las integrantes
+
+```Python
+h1_n = np.array([5, 6, 0, 0, 7, 1, 3])
+x1_n = np.array([1, 0, 5, 3, 4, 4, 2, 3, 9, 9])
+h2_n = np.array([5, 6, 0, 0, 7, 2, 1])
+x2_n = np.array([1, 0, 0, 0, 2, 4, 1, 8, 2, 2])
+```
+•	np.array : Utilizado para definir los datos como vectores
+
+Ya teniendo los datos, procedemos a calcular la convolución en el programa
+
+```Python
+y1_n = np.convolve(x1_n, h1_n, mode='full')
+y2_n = np.convolve(x2_n, h2_n, mode='full')
+```
+•	np.convolve(): Es una función de numpy que calcula la convolución entre dos secuencias.
+•	mode='full': Devuelve la convolución completa, sin recortar valores.
+
+Con la convolución ya calculada podemos empezar a graficar para y1(n), y2(n) por aparte 
+
+```Python
+plt.figure(figsize=(10, 5))
+```
+•	plt.figure:  Crea una nueva figura con un tamaño específico.
+
+# Gráfica para y1(n)
+
+```Python
+plt.subplot(2, 1, 1)
+plt.stem(y1_n)
+plt.xlabel('n')
+plt.ylabel('y1(n)')
+plt.title('Convolución de h1(n) y x1(n)')
+plt.grid()
+```
+
+•	plt.subplot(2,1,1): Se divide la figura en 2 filas y 1 columna, seleccionando la primera fila.
+•	plt.stem(y1_n): Se dibuja la señal y1_n en forma de gráfico de puntos y líneas verticales (gráfico de señales discretas).
+•	plt.grid():  en Matplotlib se usa para agregar una cuadrícula a un gráfico, lo que facilita la visualización de los datos.
+•	plt.xlabel: Utiliza para poner títulos en la gráficas dependiendo el eje
+
+# Gráfica para y2(n)
+
+```Python
+plt.subplot(2, 1, 2)
+plt.stem(y2_n)
+plt.xlabel('n')
+plt.ylabel('y2(n)')
+plt.title('Convolución de h2(n) y x2(n)')
+plt.grid()
+```
+Mismos pasos que antes, pero graficando y2(n).
+
+Por último, se muestran y se ajustan las gráficas realizadas
+
+```Python
+plt.tight_layout()
+plt.show()
+```
+•	plt.tight_layout(): Ajusta los subgráficos para que no se superpongan.
+•	plt.show(): Muestra la figura en pantalla.
+
+Se imprimen los valores
+
+```Python
+print("y1(n) =", y1_n)
+print("y2(n) =", y2_n)
+```
+
+
 En el segundo paso de la guía, se debía encontrar la correlación entre dos señales asignadas por la guía, donde la correlación cruzada mide la similitud entre dos señales en distintos desplazamientos. Además, se debía obtener la representación gráfica y secuencial. Para realizar este punto, utilizamos el siguiente código, el cual se explicará a continuación:
 
 # CODIGO
