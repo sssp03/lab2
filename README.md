@@ -7,7 +7,8 @@ h2(n)={5, 6, 0, 0, 7, 2, 1},
 x2(n)={1, 0, 0, 0, 2, 4, 1, 8, 2, 2}.
 Estos cálculos fueron posible realizarse gracias a la explicación de la docente, a continuación mostraremos los resultados obtenidos junto con las gráficas de cada sistema.
 # Integrante 1
-![image](https://github.com/user-attachments/assets/1950e1cd-a6de-4d73-be78-d9e7a0552cf8)
+![image](https://github.com/user-attachments/assets/f4667d31-34de-4ce8-8497-53059fb7d04a)
+
 
 # Integrante 2
 ![image](https://github.com/user-attachments/assets/74e5d430-629c-490d-bfb2-5c095d896caf)
