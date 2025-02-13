@@ -136,7 +136,7 @@ median_freq = np.median(frequencies[:fs//2])
 std_freq = np.std(frequencies[:fs//2])
 ```
 - `np.mean(frequencies[:fs//2])`: Calcula la frecuencia media de la señal.
-✅ np.median(frequencies[:fs//2]): Calcula la frecuencia mediana.
-✅ np.std(frequencies[:fs//2]): Calcula la desviación estándar, indicando la dispersión de las frecuencias.
+-` np.median(frequencies[:fs//2])`: Calcula la frecuencia mediana.
+-` np.std(frequencies[:fs//2])`: Calcula la desviación estándar, indicando la dispersión de las frecuencias.
 
 
