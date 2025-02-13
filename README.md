@@ -9,10 +9,10 @@ x1(n)= {1, 0, 5, 3, 4, 4, 2, 3, 9, 9} es el código estudiantil y cédula  de un
 h2(n)={5, 6, 0, 0, 7, 2, 1}, 
 
 x2(n)={1, 0, 0, 0, 2, 4, 1, 8, 2, 2}.
+
 Estos cálculos fueron posible realizarse gracias a la explicación de la docente, a continuación mostraremos los resultados obtenidos junto con las gráficas de cada sistema.
 # Integrante 1
 ![image](https://github.com/user-attachments/assets/cc6dee0f-825c-4bf1-9e52-0e5c532c8243)
-
 ![image](https://github.com/user-attachments/assets/bf065dee-ed25-40ed-9935-e1e731be26f5)
 
 
