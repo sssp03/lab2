@@ -129,4 +129,14 @@ print(f"Frecuencia mediana: {median_freq:.2f} Hz")
 print(f"Desviación estándar: {std_freq:.2f} Hz")
 ```
 
-Para calcular los datos estadisticos descriptivos
+Para calcular los datos estadisticos descriptivos se utilizo el siguiente codigo:
+```Python
+mean_freq = np.mean(frequencies[:fs//2])
+median_freq = np.median(frequencies[:fs//2])
+std_freq = np.std(frequencies[:fs//2])
+```
+- `np.mean(frequencies[:fs//2])`: Calcula la frecuencia media de la señal.
+✅ np.median(frequencies[:fs//2]): Calcula la frecuencia mediana.
+✅ np.std(frequencies[:fs//2]): Calcula la desviación estándar, indicando la dispersión de las frecuencias.
+
+
