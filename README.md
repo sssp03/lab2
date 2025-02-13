@@ -110,33 +110,132 @@ Para el ultimo punto de la guía se debía descargar una señal de physionet de 
 
 Para el punto i se realizo el siguiente codigo, que se explicara a continuación:
 ```Python
-# Calcular estadísticas de la señal
-mean_freq = np.mean(frequencies[:fs//2])
-median_freq = np.median(frequencies[:fs//2])
-std_freq = np.std(frequencies[:fs//2])
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Graficar histograma de frecuencias
-plt.figure(figsize=(8, 4))
-plt.hist(frequencies[:fs//2], bins=30, alpha=0.75, color='b', edgecolor='black')
-plt.title("Histograma de Frecuencias")
-plt.xlabel("Frecuencia [Hz]")
-plt.ylabel("Ocurrencias")
+# ================================
+# 1️⃣ DEFINIR LA SEÑAL Y FRECUENCIA DE MUESTREO
+# ================================
+fs = 1000  # Frecuencia de muestreo en Hz
+t = np.linspace(0, 1, fs, endpoint=False)  # 1 segundo de datos
+
+# Generar una señal de prueba con ruido (puedes cambiarla según tu caso)
+signal = np.sin(2 * np.pi * 50 * t) + 0.5 * np.sin(2 * np.pi * 120 * t) + np.random.normal(0, 0.2, len(t))
+
+# ================================
+# 2️⃣ CÁLCULO DE ESTADÍSTICOS DESCRIPTIVOS
+# ================================
+mean_value = np.mean(signal)  # Media de la señal
+median_value = np.median(signal)  # Mediana de la señal
+std_value = np.std(signal)  # Desviación estándar
+max_value = np.max(signal)  # Valor máximo
+min_value = np.min(signal)  # Valor mínimo
+rms_value = np.sqrt(np.mean(signal**2))  # Valor RMS (Root Mean Square)
+
+# ================================
+# 3️⃣ MOSTRAR LOS RESULTADOS
+# ================================
+print(f"Frecuencia de muestreo: {fs} Hz")
+print(f"Media de la señal: {mean_value:.4f}")
+print(f"Mediana de la señal: {median_value:.4f}")
+print(f"Desviación estándar: {std_value:.4f}")
+print(f"Valor máximo: {max_value:.4f}")
+print(f"Valor mínimo: {min_value:.4f}")
+print(f"Valor RMS: {rms_value:.4f}")
+
+# ================================
+# 4️⃣ GRAFICAR LA SEÑAL EN FUNCIÓN DEL TIEMPO
+# ================================
+plt.figure(figsize=(10, 4))
+plt.plot(t, signal, label="Señal", color='b')
+plt.xlabel("Tiempo [s]")
+plt.ylabel("Amplitud")
+plt.title("Señal en el dominio del tiempo")
+plt.legend()
+plt.grid()
 plt.show()
 
-# Mostrar estadísticas
-print(f"Frecuencia media: {mean_freq:.2f} Hz")
-print(f"Frecuencia mediana: {median_freq:.2f} Hz")
-print(f"Desviación estándar: {std_freq:.2f} Hz")
+# ================================
+# 5️⃣ HISTOGRAMA DE LA DISTRIBUCIÓN DE LA SEÑAL
+# ================================
+plt.figure(figsize=(8, 4))
+plt.hist(signal, bins=30, alpha=0.75, color='c', edgecolor='black')
+plt.xlabel("Amplitud de la señal")
+plt.ylabel("Frecuencia")
+plt.title("Histograma de la señal")
+plt.grid()
+plt.show()
 ```
-
-Para calcular los datos estadisticos descriptivos se utilizo el siguiente codigo:
+Como primer paso definimos la señal y la frecuencia de muestreo:
 ```Python
-mean_freq = np.mean(frequencies[:fs//2])
-median_freq = np.median(frequencies[:fs//2])
-std_freq = np.std(frequencies[:fs//2])
+fs = 1000  # Frecuencia de muestreo en Hz
+t = np.linspace(0, 1, fs, endpoint=False)  # 1 segundo de datos
 ```
-- `np.mean(frequencies[:fs//2])`: Calcula la frecuencia media de la señal.
--` np.median(frequencies[:fs//2])`: Calcula la frecuencia mediana.
--` np.std(frequencies[:fs//2])`: Calcula la desviación estándar, indicando la dispersión de las frecuencias.
+-fs = 1000: Indica que la señal está muestreada a 1000 Hz (1000 puntos por segundo).
+-t = np.linspace(0, 1, fs, endpoint=False): Genera un vector de tiempo de 1 segundo con 1000 puntos.
+Despues va a generar un a señal de prueba
+```Python
+signal = np.sin(2 * np.pi * 50 * t) + 0.5 * np.sin(2 * np.pi * 120 * t) + np.random.normal(0, 0.2, len(t))
+```
+-`np.sin(2 * np.pi * 50 * t)`: Componente senoidal a 50 Hz.
+-`0.5 * np.sin(2 * np.pi * 120 * t)`: Componente senoidal más débil a 120 Hz.
+-`np.random.normal(0, 0.2, len(t))`: Ruido aleatorio con media 0 y desviación 0.2 (para simular una señal real).
+
+Se va a calcular los estadisticos descriptivos por medio del siguiente codigo:
+```Python
+mean_value = np.mean(signal)  # Media de la señal
+median_value = np.median(signal)  # Mediana de la señal
+std_value = np.std(signal)  # Desviación estándar
+max_value = np.max(signal)  # Valor máximo
+min_value = np.min(signal)  # Valor mínimo
+rms_value = np.sqrt(np.mean(signal**2))  # Valor RMS
+```
+-`Media (mean)`: Promedio de todos los valores de la señal.
+  
+-` Mediana (median)`: Valor central cuando los datos están ordenados.
+
+-`Desviación estándar (std)`: Cuánto varían los datos respecto a la media.
+
+-`Máximo y mínimo (max y min)`: Valores extremos de la señal.
+
+-`Valor RMS (Root Mean Square)`: Indica la potencia de la señal (común en ingeniería eléctrica).
+Para realizar el histograma de la distribucion de valores de la señal se necesitaron las siguientes lineas de codigo:
+```Python
+plt.figure(figsize=(8, 4))
+plt.hist(signal, bins=30, alpha=0.75, color='c', edgecolor='black')
+plt.xlabel("Amplitud de la señal")
+plt.ylabel("Frecuencia")
+plt.title("Histograma de la señal")
+plt.grid()
+plt.show()
+```
+Donde `plt.hist(signal, bins=30)`: Crea un histograma con 30 intervalos (bins).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
