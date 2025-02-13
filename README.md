@@ -29,6 +29,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 •	numpy : Para trabajar con arreglos numéricos 
+
 •	 matplotlib.pyplot : Para generar gráficos.
 
 Después, se establecieron los valores cómo se había hecho anteriormente con los datos de las integrantes
@@ -48,6 +49,7 @@ y1_n = np.convolve(x1_n, h1_n, mode='full')
 y2_n = np.convolve(x2_n, h2_n, mode='full')
 ```
 •	np.convolve(): Es una función de numpy que calcula la convolución entre dos secuencias.
+
 •	mode='full': Devuelve la convolución completa, sin recortar valores.
 
 Con la convolución ya calculada podemos empezar a graficar para y1(n), y2(n) por aparte 
