@@ -94,14 +94,38 @@ axs[2].set_ylabel("Correlación")
   
 
 Para el ultimo punto de la guía se debía descargar una señal de physionet de EEG y realizar los siguientes puntos:
-i. Caracterice la señal en función del tiempo, esto es, calcule sus estadísticos descriptivos, frecuencia de muestreo, etc.
-ii. Describa la señal en cuanto a su clasificación. 
-iii. Aplique la transformada de Fourier de la señal y grafique tanto su transformada, como su densidad espectral. 
-iv. Analice los estadísticos descriptivos en función de la frecuencia:
+
+`i.` Caracterice la señal en función del tiempo, esto es, calcule sus estadísticos descriptivos, frecuencia de muestreo, etc.
+
+`ii.` Describa la señal en cuanto a su clasificación. 
+
+`iii.` Aplique la transformada de Fourier de la señal y grafique tanto su transformada, como su densidad espectral. 
+
+`iv.` Analice los estadísticos descriptivos en función de la frecuencia:
+
       • Frecuencia media
       • Frecuencia mediana
       • Desviación estándar
       • Histograma de frecuencias
 
+Para el punto i se realizo el siguiente codigo, que se explicara a continuación:
+```Python
+# Calcular estadísticas de la señal
+mean_freq = np.mean(frequencies[:fs//2])
+median_freq = np.median(frequencies[:fs//2])
+std_freq = np.std(frequencies[:fs//2])
 
+# Graficar histograma de frecuencias
+plt.figure(figsize=(8, 4))
+plt.hist(frequencies[:fs//2], bins=30, alpha=0.75, color='b', edgecolor='black')
+plt.title("Histograma de Frecuencias")
+plt.xlabel("Frecuencia [Hz]")
+plt.ylabel("Ocurrencias")
+plt.show()
+
+# Mostrar estadísticas
+print(f"Frecuencia media: {mean_freq:.2f} Hz")
+print(f"Frecuencia mediana: {median_freq:.2f} Hz")
+print(f"Desviación estándar: {std_freq:.2f} Hz")
+```
 
