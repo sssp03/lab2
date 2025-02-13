@@ -129,3 +129,4 @@ print(f"Frecuencia mediana: {median_freq:.2f} Hz")
 print(f"Desviación estándar: {std_freq:.2f} Hz")
 ```
 
+Para calcular los datos estadisticos descriptivos
