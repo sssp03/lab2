@@ -91,7 +91,17 @@ axs[2].set_ylabel("Correlación")
 - ` stem(range(-len(n) + 1, len(n)), corr, basefmt `=" "):
 - `Se usa range(-len(n) + 1, len(n)) ` para definir el eje de desplazamientos de la correlación.
 - `Se grafica corr-`, que contiene los valores de la correlación entre x1_n y x2_n.
+  
 
+Para el ultimo punto de la guía se debía descargar una señal de physionet de EEG y realizar los siguientes puntos:
+i. Caracterice la señal en función del tiempo, esto es, calcule sus estadísticos descriptivos, frecuencia de muestreo, etc.
+ii. Describa la señal en cuanto a su clasificación. 
+iii. Aplique la transformada de Fourier de la señal y grafique tanto su transformada, como su densidad espectral. 
+iv. Analice los estadísticos descriptivos en función de la frecuencia:
+      • Frecuencia media
+      • Frecuencia mediana
+      • Desviación estándar
+      • Histograma de frecuencias
 
 
 
